@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using Exjam_ostad.Models;
+
+
+<div class="row">
+    <h1>I am Dashboard</h1>
+</div>
+
+<table  class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Count</th>
+            <th>Date</th>
+            <th>Member Name</th>
+            <th>Mebmber Des:</th>
+            <th>Mebmber Mob:</th>
+        </tr>
+    </thead>
+    <tbody>
+      @{
+            List<Equiment> equiments = Equiment.ListEquiment();
+            foreach (Equiment equiment in equiments)
+            {
+                <tr>
+                    <td>@equiment.Id</td>
+                    <td>@equiment.Name</td>
+                    <td>@equiment.Count</td>
+                    <td>@equiment.DateTime</td>
+                    <td>@equiment.MemberName</td>
+                    <td>@equiment.MemberDesignation</td>
+                    <td>@equiment.MobileNumber</td>
+                </tr>
+            }
+          }
+  </tbody>
+</table>
+
+
